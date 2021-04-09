@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.png">
+  <style>
+    * {font-family: Times, serif;}
+    body {
+      width: 900px;
+      margin: auto;
+      line-height: 1.6rem;
+    }
+    .border {
+      border: 1px solid #ddd;
+      margin: 10px;
+      padding: 10px;
+      color: darkblue;
+      background-color: white;
+    }
+    .grey {
+      margin: 10px;
+      padding: 10px;
+      background-color: #eee;
+    }
+    em {color: red;}
+
+    dark {color: darkred;}
+    red {color: red;}
+    blue {color: blue;}
+    green {color: green;}
+
+    b {color: navy;}
+  </style>
+  <title>JavaScript Style animation 속성</title>
+</head>
+<body>
+  <h1>JavaScript Style animationName 속성</h1>
+  <hr>
+
+  <div class="border">
+    document.getElementById("<dark>id</dark>").style.animationName = "<dark>myMove</dark>";
+  </div>
+
+  <p>animationName 속성은 @keyframes 애니메이션의 이름을 설정하거나 반환한다.</p>
+  <h3>구문(Syntax)</h3>
+  <p><em>animationName</em> 속성 반환</p>
+  <div id="keyframes" class="border">
+    <blue>let</blue> keyframes = <i>object</i>.style.animationName;
+  </div>
+  <button onclick="document.getElementById('keyframes').innerHTML=document.getElementById('animation').style.animationName">animationName 속성 확인</button> : 속성 변경 후 확인
+  <p>animationName 속성 설정</p>
+  <div class="border">
+    <i>object</i>style.animationName = "<dark>none|<i>keyframeName</i>|initial|inherit</dark>";
+  </div>
+  
+  <h3>속성 값</h3>
+  <table style="border: 1px solid lightgrey; border-collapse: collapse; width: 100%;">
+    <style>
+      th, td {
+        border: 1px solid lightgrey;
+      }
+      tr:nth-child(even) {background-color: #eee;}
+    </style>
+    <tr style="text-align: left;">
+      <th>속성 값</th><th>설 명</th>
+    </tr>
+    <tr>
+      <td>none</td><td>기본값. 애니메이션이 없음(cascade에서 애니메이션을 재정의하는 데 사용할 수 있다)</td>
+    </tr>
+    <tr>
+      <td><i>keyframeName</i></td><td>선택할 키 프레임의 이름 지정</td>
+    </tr>
+    <tr>
+      <td>initial</td><td>기본값으로 설정</td>
+    </tr>
+    <tr>
+      <td>inherit</td><td>상위 요소에서 상속</td>
+    </tr>
+  </table>
+
+  <style>
+    #animation {
+      width: 100px;
+      height: 100px;
+      background: red;
+      color: yellow;
+      text-align: center;
+      font-size: 1.2rem;
+      position: relative;
+      animation: myAnimation 5s infinite;
+    }
+
+    @keyframes myAnimation {
+      from {width: 0px;}
+      to {width: 50%;}
+    }
+    @keyframes changeAnimation {
+      from {width: 0px;}
+      to {width: 100%;background-color: blue;}
+    }
+  </style>
+
+  <div id="animation">Animation</div>
+
+  <button onclick="document.getElementById('animation').style.animationName = 'changeAnimation'" style="margin-left: 100px;">Change Animation</button>
+
+</body>
+</html>

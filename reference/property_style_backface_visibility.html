@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.png">
+  <style>
+    * {font-family: Times, serif;}
+    body {
+      width: 900px;
+      margin: auto;
+      line-height: 1.6rem;
+    }
+    h1, h2, h3 {margin-left: 16px;}
+    p {margin-left: 16px;}
+    button {margin: 16px;padding: 4px 16px;}
+    button:hover {cursor: pointer;}
+
+    .border {
+      border: 1px solid #ddd;
+      margin: 10px;
+      padding: 10px;
+      color: darkblue;
+      background-color: transparent;
+    }
+    .grey {
+      margin: 10px;
+      padding: 10px;
+      background-color: #eee;
+    }
+    i {color: navy;}
+    em {color: red;}
+
+    dark {color: darkred;}
+    red {color: red;}
+    blue {color: blue;}
+    green {color: green;}
+
+    b {color: navy;}
+
+    table.property {
+      border: 1px solid lightgrey;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    table.property th, table.property td {
+      border: 1px solid lightgrey;
+      padding: 5px;
+    }
+    table.property th {text-align: left;}
+    table.property th:first-child, table.property td:first-child {
+      width: 100px;
+    }
+    table.property tr:nth-child(even) {background-color: #eee;}
+  </style>
+  <title>JavaScript Style backfaceVisibility 속성</title>
+</head>
+<body>
+  <h1>JavaScript Style backfaceVisibility 속성</h1>
+  <p>
+    backfaceVisibility 속성은 회전하는 요소가 화면을 향하지 않을 때 요소를 표시할지 여부를 설정한다.
+    이 속성은 회전하는 요소의 뒷면을 보고 싶지 않을 때 유용하다.
+  </p>
+  <hr>
+  <p>회전하는 &lt;<dark>div</dark>> 요소의 뒷면 숨기기</p>
+    <div class="grey">
+      <div class="border">document.getElementById("<dark>idDiv</dark>").style.backfaceVisibility = "<dark>hidden</dark>";</div>
+    </div>
+    <style>
+      #aniDiv {
+        width: 100px;
+        height: 100px;
+        background: red;
+        color: white;
+        padding-top: 36px ;
+        -webkit-animation: mymove 2s infinite linear alternate; /* Chrome, Safari, Opera */
+        animation: mymove  2s delay infinite linear alternate;
+      }
+      /* Chrome, Safari, Operan */
+      @-webkit-keyframes mymove {
+        to {-webkit-transform: rotateY(180deg);}
+      }
+      @keyframes mymove {
+        to {transform: rotateY(180deg);}
+      }
+    </style>
+    <div id="aniDiv">
+      <h1>Hello</h1>
+    </div>
+
+    <input type="checkbox" onclick="backfacevible(this)" checked>backfaceVisibility
+
+    <script>
+      function backfacevible(check) {
+        if (check.checked === true) {
+          // Code for Chrome, Safari, Opera
+          document.getElementById("aniDiv").style.webkitBackfaceVisibility = "visible";
+          document.getElementById("aniDiv").style.backfaceVisibility = "visible";
+        } else {
+          // Code for Chrome, Safari, Opera
+          document.getElementById("aniDiv").style.webkitBackfaceVisibility = "hidden";
+          document.getElementById("aniDiv").style.backfaceVisibility = "hidden";
+        }
+      }
+    </script>
+
+    <h3>구문(Syntax)</h3>
+    <p>backfaceVisibility 속성 반환</p>
+    <div class="border">
+      <i>object</i>.style.backfaceVisibility
+    </div>
+    <p>backfaceVisibility 속성 설정</p>
+    <div class="border">
+      <i>object</i>.style.backfaceVisibility = "<dark>visible|hidden|initial|inherit</dark>";
+    </div>
+
+    <h3>속성 값</h3>
+    <table class="property">
+      <tr>
+        <th>속성 값</th><th>설 명</th>
+      </tr>
+      <tr>
+        <td>visible</td><td>기본값, 앞 뒷면 모두 보이기</td>
+      </tr>
+      <tr>
+        <td>hidden</td><td>뒷면 숨기기</td>
+      </tr>
+      <tr>
+        <td>initial</td><td>기본값으로 설정</td>
+      </tr>
+      <tr>
+        <td>inherit</td><td>상위 요소에서 상속</td>
+      </tr>
+    </table>
+
+
+
+
+
+  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>
+  <style>
+    #idDiv {
+      width: 600px;margin: 16px; padding: 16px;background: url('img_tree.png') no-repeat top right;color: navy;border: 1px solid grey;
+    }
+  </style>
+  <div id="idDiv">
+    자기를 바로 봅시다.<br><br>
+    자기는 원래 구원되어 있습니다.<br>
+    자기가 본래 부처입니다.<br>
+    자기는 항상 행복과 영광에 넘쳐 있습니다.<br>
+    극락과 천당은 꿈속의 잠꼬대입니다.<br><br>
+
+    자기를 바로 봅시다.<br><br>
+    모든 진리는 자기 속에 구비되어 있습니다.<br>
+    만약 자기 밖에서 진리를 구하면 이는 바다 밖에서<br>
+    물을 구함과 같습니다.<br><br>
+
+    자기를 바로 봅시다.<br><br>
+    자기는 영원하므로 종말이 없습니다.<br>
+    자기를 모르는 사람은 세상의 종말을 걱정하며<br>
+    두려워하며 헤매고 있습니다.<br>
+    욕심이 자취를 감추면 마음의 눈이 열려서 순금인 <br>
+    자기를 바로 보게 됩니다.<br>
+  </div>
+
+  <br><br><br><br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>

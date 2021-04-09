@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.png">
+  <style>
+    * {font-family: Times, serif;}
+    body {
+      width: 900px;
+      margin: auto;
+      line-height: 1.6rem;
+    }
+    h1, h2, h3 {margin-left: 30px;}
+    p {margin-left: 16px;}
+
+    .border {
+      border: 1px solid #ddd;
+      margin: 10px;
+      padding: 10px;
+      color: darkblue;
+      background-color: white;
+    }
+    .grey {
+      margin: 10px;
+      padding: 10px;
+      background-color: #eee;
+    }
+    em {color: red;}
+
+    dark {color: darkred;}
+    red {color: red;}
+    blue {color: blue;}
+    green {color: green;}
+
+    b {color: navy;}
+
+    table.property {
+      border: 1px solid lightgrey;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    table.property th, table.property td {
+      border: 1px solid lightgrey;
+      padding: 5px;
+    }
+    table.property th {text-align: left;}
+    table.property th:first-child, table.property td:first-child {
+      width: 80px;
+    }
+    table.property tr:nth-child(even) {background-color: #eee;}
+  </style>
+  <title>JavaScript Style background 속성</title>
+</head>
+<body>
+  <h1>JavaScript Style backgroundImage 속성</h1>
+  <p>
+    <em>backgroundImage</em> 속성은 요소의 배경 이미지를 설정하거나 반환한다.<br>
+    <b>참고  :</b> 배경 이미지 외에 배경색도 함께 지정해야 한다.<br>
+    이미지를 사용할 수 없는 경우 배경색이 사용된다.<br>
+  </p>
+  <p>문서의 배경 이미지 설정</p>
+  <div class="grey">
+    <div class="border">
+      document.body.style.backgroundImage = "<dark>url('img_tree.png')</dark>";
+    </div>
+  </div>
+  <button onclick="setbgimage()">배경 그림 설정</button>
+  <script>
+    function setbgimage(){
+      document.body.style.backgroundColor="#f9f9f9";
+      document.body.style.backgroundImage="url('img_tree.png')";
+    }
+    function getbgimage() {
+      document.getElementById("disp").innerHTML = document.body.style.backgroundImage;
+    }
+  </script>
+
+<h3>구문(Syntax)</h3>
+<p>backgroundImage 속성 반환</p>
+<div id="disp" class="border">
+  <i>object</i>.style.backgroundImage
+</div>
+<button onclick="getbgimage()">body.style.backgroundImage 속성 확인</button>
+
+<p>backgroundImage 속성 설정</p>
+<div class="border">
+  object.style.backgroundImage = "<dark><i>url('URL')</i>|none|initial|inherit</dark>"
+</div>
+
+<h3>속성 값</h3>
+<table class="property">
+  <tr>
+    <th>속성 값</th><th>설 명</th>
+  </tr>
+  <tr>
+    <td><i>url('URL')</i></td><td>이미지 파일의 위치</td>
+  </tr>
+  <tr>
+    <td>none</td><td>배경 이미지 없음. 기본값</td>
+  </tr>
+  <tr>
+    <td>initial</td><td>기본값으로 설정</td>
+  </tr>
+  <tr>
+    <td>inherit</td><td>상위 요소에서 상속</td>
+  </tr>
+</table>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>

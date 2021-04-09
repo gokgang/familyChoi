@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.png">
+  <style>
+    * {font-family: Times, serif;}
+    body {
+      width: 900px;
+      margin: auto;
+      line-height: 1.6rem;
+    }
+    h1, h2, h3 {margin-left: 30px;}
+    .border {
+      border: 1px solid #ddd;
+      margin: 10px;
+      padding: 10px;
+      color: darkblue;
+      background-color: white;
+    }
+    .grey {
+      margin: 10px;
+      padding: 10px;
+      background-color: #eee;
+    }
+    em {color: red;}
+
+    dark {color: darkred;}
+    red {color: red;}
+    blue {color: blue;}
+    green {color: green;}
+
+    b {color: navy;}
+  </style>
+  <title>JavaScript Style animation 속성</title>
+</head>
+<body>
+  <h1>JavaScript Style animationTimingFunction  속성</h1>
+
+  <div id="myMove" style="width: 100px;height: 100px;background:red;position: relative;animation: myAni 5s infinite;">
+    <style>
+      @keyframes myAni {
+        from {left: 0;}
+        to {left: 800px;}
+      }
+    </style>
+  </div>
+  <button onclick="document.getElementById('myMove').style.animationTimingFunction = 'linear';" style="margin-left: 32px;">
+    Change animationTimingFunction linear
+  </button>
+  <hr>
+
+  <h3>animationTimingFunction 속성 변경</h3>
+  <div class="border">
+    document.getElementById("<dark>myMove</dark>").style.animationTimingFunction = "<dark>linear</dark>";
+  </div>
+  <p>
+    <em>animationTimingFunction</em> 은 애니메이션의 속도 곡선을 지정한다.<br>
+    속도 곡선은 애니메이션이 CSS 스타일에서 다른 스타일로 변경하는 데 사용되는 시간을 지정한다.<br>
+    속도 곡선은 애니메이션을 부드럽게 작동하도록 하는 데 사용된다.<br>
+  </p>
+  <hr>
+  <h3>구문(Syntax)</h3>
+  <p><em>animationTimingFunction</em> 속성 반환</p>
+  <div class="border">
+    <blue>let</blue> timing = <i>object</i>.style.animationTimingFunction;
+  </div>
+  <p><em>animationTimingFunction</em> 속성 설정</p>
+  <div class="border">
+    <i>object</i>.style.animationTimingFunction = "<dark>linear|ease|ease-in|ease-out|cubic-bezier(<i>n</i>, <i>n</i>, <i>n</i>, <i>n</i> )|initial|inherit</dark>"
+  </div>
+
+  <h3>속성 값</h3>
+  <table style="border: 1px solid lightgrey;border-collapse: collapse;width: 100%;">
+    <style>
+      th, td {border: 1px solid lightgrey;padding: 5px;}
+      th:first-child, td:first-child {width: 160px;}
+      tr:nth-child(even){background-color: #eee;}
+    </style>
+    <tr style="text-align: left;">
+      <th>속성 값</th><td>설 명</td>
+    </tr>
+    <tr>
+      <td>linear</td><td>시작부터 끝까지 속도 동일</td>
+    </tr>
+    <tr>
+      <td>ease</td><td>기본값, 빠르게 시작해서 느리게 끝난다.</td>
+    </tr>
+    <tr>
+      <td>ease-in</td><td>시작 부분의 속도가 느리다.</td>
+    </tr>
+    <tr>
+      <td>ease-out</td><td>끝 부분의 속도가 느리다.</td>
+    </tr>
+    <tr>
+      <td>ease-in-out</td><td>시작과 끝 부분의 속도가 느리다.</td>
+    </tr>
+    <tr>
+      <td>cubic-bezier(n, n, n, n)</td><td>입방체 함수에 고유 값 지정, 가능한 값은 0부터 1까지의 숫자</td>
+    </tr>
+    <tr>
+      <td>initial</td><td>기본값으로 설정</td>
+    </tr>
+    <tr>
+      <td>inherit</td><td>상위 요소에서 상속</td>
+    </tr>
+  </table>
+</body>
+</html>

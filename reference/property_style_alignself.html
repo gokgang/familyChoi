@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.png">
+  <style>
+    * {font-family: Times, serif;}
+    body {
+      width: 80%;
+      margin: auto;
+      line-height: 1.6rem;
+    }
+    .border {
+      border: 1px solid #ddd;
+      margin: 10px;
+      padding: 10px;
+      color: darkblue;
+      background-color: white;
+    }
+    .grey {
+      margin: 10px;
+      padding: 10px;
+      background-color: #eee;
+    }
+    em {color: red;}
+
+    dark {color: darkred;}
+    red {color: red;}
+    blue {color: blue;}
+    green {color: green;}
+
+    b {color: navy;}
+  </style>
+  <title>JavaScript Style alignSelf 속성</title>
+</head>
+<body>
+  <h1>JavaScript Style alignSelf 속성</h1>
+  <p>컨테이너 내부의 선택 항목에 대한 정렬</p>
+  <p><b>참고 : </b> <em>alignSelf</em> 속성은 컨테이너의 <em>alignItems</em> 속성을 재정의한다.</p>
+  <h3>Example</h3>
+  <div class="grey">
+    <div class="border">
+      document.getElementById("<dark>myBlueDiv</dark>").style.alignSelf = "<dark>stretch</dark>";
+    </div>
+  </div>
+
+  <h3>Syntax</h3>
+  <p>alignSelf 속성 반환</p>
+  <div id="align" class="border">
+    <i>object</i>.style.alignSelf
+  </div>
+  <button onclick="document.getElementById('align').innerHTML=document.getElementById('align').style.alignSelf">align-items 속성값 확인</button>
+  <p>alignSelf 속성 설정</p>
+  <p class="border">
+    <i>object</i>.style.alignSelf = "<dark>auto|stretch|center|flex-start|flex-end|baseline|initial|inherit</dark>";
+  </p>
+
+  <h3>속성 값</h3>
+  <table style="border: 1px solid #ddd; border-collapse: collapse;width: 100%;">
+    <style>
+      th, td {border: 1px solid #ddd;padding: 5px;}
+      th:first-child, td:first-child {width: 60px;}
+      tr:nth-child(even){background-color: #eee;}
+    </style>
+    <tr style="text-align: left;"><th>속성 값</th><th>설 명</th></tr>
+    <tr><td>auto</td><td>기본값. 상위 컨테이너의 정렬 항목 속성에서 상속. 상위 컨테이너가 없는 경우 "stretch"</td></tr>
+    <tr><td>stretch</td><td>요소가 컨테이너에 맞도록 늘여서 배치</td></tr>
+    <tr><td>center</td><td>중앙에 배치</td></tr>
+    <tr><td>flex-start</td><td>맨 위 시작 부분에 배치</td></tr>
+    <tr><td>flex-end</td><td>맨 아래 부분에 배치</td></tr>
+    <tr><td>baseline</td><td>기준선에 배치</td></tr>
+    <tr><td>initial</td><td>기본값으로 설정</td></tr>
+    <tr><td>inherit</td><td>상위 요소에서 상속</td></tr>
+  </table>
+
+  <style>
+    #main {
+      width: 600px;
+      height: 200px;
+      border: 1px solid grey;
+      text-align: center;
+      display: flex;
+      align-items: flex-start;
+    }
+    #main div {
+      flex: 1;
+    }
+    #blue {
+      align-self: center;
+    }
+  </style>
+
+  <div id="main">
+    <div style="background-color: red; color: yellow;">align-items: flex-start </div>
+    <div style="background-color: blue; color: yellow;" id="blue">alignSelf: center</div>
+    <div style="background-color: green; color: yellow;">align-items: flex-start</div>
+  </div>
+
+  <input type="button" value="Change to baseline" onclick="document.getElementById('blue').style.alignSelf = 'baseline';">
+  <input type="button" value="Change to stretch" onclick="document.getElementById('blue').style.alignSelf = 'stretch';">
+  <input type="button" value="Change to flex-start" onclick="document.getElementById('blue').style.alignSelf = 'flex-start';">
+  <input type="button" value="Change to flex-end" onclick="document.getElementById('blue').style.alignSelf = 'flex-end';">
+  <p>버튼을 클릭하면 <em>alignSelf</em> 속성 값을 변경한다.</p>
+
+</body>
+</html>

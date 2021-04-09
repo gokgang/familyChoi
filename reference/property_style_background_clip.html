@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.png">
+  <style>
+    * {font-family: Times, serif;}
+    body {
+      width: 900px;
+      margin: auto;
+      line-height: 1.6rem;
+    }
+    h1, h2, h3 {margin-left: 30px;}
+    p {margin-left: 16px;}
+    button {margin: 16px;padding: 4px 16px;}
+    button:hover {cursor: pointer;}
+
+    .border {
+      border: 1px solid #ddd;
+      margin: 10px;
+      padding: 10px;
+      color: darkblue;
+      background-color: transparent;
+    }
+    .grey {
+      margin: 10px;
+      padding: 10px;
+      background-color: #eee;
+    }
+    em {color: red;}
+
+    dark {color: darkred;}
+    red {color: red;}
+    blue {color: blue;}
+    green {color: green;}
+
+    b {color: navy;}
+
+    table.property {
+      border: 1px solid lightgrey;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    table.property th, table.property td {
+      border: 1px solid lightgrey;
+      padding: 5px;
+    }
+    table.property th {text-align: left;}
+    table.property th:first-child, table.property td:first-child {
+      width: 100px;
+    }
+    table.property tr:nth-child(even) {background-color: #eee;}
+  </style>
+  <title>JavaScript Style background 속성</title>
+</head>
+<body>
+  <h1>JavaScript Style backgroundClip 속성</h1>
+  <p>배경의 색칠 영역을 지정</p>
+  <div class="border">
+    document.getElementById("<dark>identifier</dark>").style.backgroundClip = "<dark>content-box</dark>";
+  </div>
+  <button onclick="document.getElementById('identifier').style.backgroundClip='content-box'">Set Background Clip content-box</button>
+  <style>
+    #identifier {
+      width: 300px;height: 300px;margin: 16px; padding: 16px;background-color: #eee;background-clip: border-box;color: navy;border: 3px dotted gray;
+    }
+  </style>
+  <div id="identifier">
+    이 글을 의미없는 글이다. 자신과 남는 어디 오아이스도 풀밭에 충분히 실현에 미인을 있을 때문이다. 충분히 내려온 아니더면, 철환하였는가? 원대하고, 얼마나 청춘 인도하겠다는 구하기 이것은 과실이 하는 그리하였는가? 만물은 스며들어 심장은 봄바람이다. 청춘의 스며들어 주는 목숨을 없는 원질이 천자만홍이 인생을 운다. 생명을 품에 풀밭에 사막이다. 이성은 하였으며, 가치를 풀밭에 쓸쓸하랴? 같이, 무엇이 못하다 지혜는 미인을 가지에 그들은 보는 뜨거운지라, 있다.
+  </div>
+
+  <h3>구문(Syntx)</h3>
+  <p>backgroundClip 속성 반환</p>
+  <div class="border">
+    <i>object</i>.style.backgroundClip
+  </div>
+
+  <p>backgroundClip 속성 설정</p>
+  <div class="border">
+    <i>object</i>.style.backgroundClip = "<dark>border-box|padding-box|content-box|initial|inherit</dark>"
+  </div>
+
+  <h3>속성 값</h3>
+  <table class="property">
+    <tr>
+      <th>속성 값</th><th>설 명</th>
+    </tr>
+    <tr>
+      <td>border-box</td><td>기본값. 배경이 테두리에 잘린다.</td>
+    </tr>
+    <tr>
+      <td>padding-box</td><td>배경이 안쪽 여유에 잘린다.</td>
+    </tr>
+    <tr>
+      <td>content-box</td><td>배경이 내용에 잘린다.</td>
+    </tr>
+    <tr>
+      <td>inintial</td><td>기본값으로 설정</td>
+    </tr>
+    <tr>
+      <td>inherit</td><td>상위 요소에서 상속</td>
+    </tr>
+  </table>
+
+
+
+  <br><br><br><br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>

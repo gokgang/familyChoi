@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.png">
+  <style>
+    * {font-family: Times, serif;}
+    body {
+      width: 900px;
+      margin: auto;
+      line-height: 1.6rem;
+    }
+    h1, h2, h3 {margin-left: 30px;}
+    p {margin-left: 16px;}
+
+    .border {
+      border: 1px solid #ddd;
+      margin: 10px;
+      padding: 10px;
+      color: darkblue;
+      background-color: white;
+    }
+    .grey {
+      margin: 10px;
+      padding: 10px;
+      background-color: #eee;
+    }
+    em {color: red;}
+
+    dark {color: darkred;}
+    red {color: red;}
+    blue {color: blue;}
+    green {color: green;}
+
+    b {color: navy;}
+
+    table.property {
+      border: 1px solid lightgrey;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    table.property th, table.property td {
+      border: 1px solid lightgrey;
+      padding: 5px;
+    }
+    table.property th {text-align: left;}
+    table.property th:first-child, table.property td:first-child {
+      width: 120px;
+    }
+    table.property tr:nth-child(even) {background-color: #eee;}
+  </style>
+  <title>JavaScript Style background 속성</title>
+</head>
+<body style="background-image: url('img_tree.png'); background-repeat: no-repeat;">
+  <h1>JavaScript Style backgroundPosition 속성</h1>
+  <p>
+    <em>backgroundPosition</em> 속성은 요소 내 배경 이미지의 위치를 설정하거나 반환한다.<br>
+  </p>
+  <p>배경 이미지의 위치 설정</p>
+  <div class="grey">
+    <div class="border">
+      document.body.style.backgroundPosition = "<dark>top right</dark>";
+    </div>
+    <button onclick="setBackGroundPosition()">Set position background image</button>
+  </div>
+  <script>
+    function setBackGroundPosition() {
+      document.body.style.backgroundPosition = "top right";
+    }
+
+    function getBackGroundPosition() {
+      document.getElementById("disp").innerHTML = document.body.style.backgroundPosition;
+    }
+  </script>
+
+  <h3>구문(Syntax)</h3>
+  <p>backgroundPosition 속성 반환</p>
+  <div id="disp" class="border">
+    <i>object</i>.style.backgroundPosition
+  </div>
+  <button onclick="getBackGroundPosition()">body.style.backgroundPosition 속성 확인</button>
+
+  <p>backgroundPosition 속성 설정</p>
+  <div class="border">
+    object.style.backgroundPosition = "<dark><i>value</i></dark>"
+  </div>
+
+  <h3>속성 값</h3>
+  <table class="property">
+    <tr>
+      <th>속성 값</th><th>설 명</th>
+    </tr>
+    <tr>
+      <td>
+        top left<br>
+        top center<br>
+        top right<br>
+        center left<br>
+        center center<br>
+        center right<br>
+        bottom left<br>
+        bottom center<br>
+        bottom right<br>
+      </td>
+      <td>키워드를 하나만 지정하면 다른 값은 "<em>center</em>" 이다.</td>
+    </tr>
+    <tr>
+      <td><i>x% y%</i></td>
+      <td>
+        <i>x</i> 값은 가로 위치를 나타내고, <i>y</i> 값은 세로 위치를 나타낸다.<br>
+        왼쪽 위 모서리는 0% 0%이다.<br>
+        오른쪽 아래 모서리는 100% 100%이다.<br>
+        하나의 값만 지정하면 다른 값은 50%이다.<br>
+      </td>
+    </tr>
+    <tr>
+      <td><i>xpos ypos</i></td>
+      <td>
+        <i>x</i> 값은 가로 위치를 나타내고, <i>y</i> 값은 세로 위치를 나타낸다.<br>
+        왼쪽 위 모서리는 0 0이다.<br>
+        단위는 픽셀(<i>0px 0px</i>) 또는 다른 CSS 단위일 수 있다.
+        하나의 값만 지정하면 다른 값은 50%이다.<br>
+        %와 단위를 혼합할 수 있다.<br>
+      </td>
+    </tr>
+    <tr>
+      <td>initial</td><td>기본값으로 설정</td>
+    </tr>
+    <tr>
+      <td>inherit</td><td>상위 요소에서 상속</td>
+    </tr>
+  </table>
+
+  <h2>예제</h2>
+
+  <div class="grey">
+    <p>배경 이미지 위치를 가운데 아래로 변경</p>
+    <div class="border">
+      document.getElementById("<dark><i>id</i></dark>").style.backgroundPosition = "<dark>center bottom</dark>";
+    </div>
+
+  <p>배경 이미지 위치를 가로 200 픽셀 , 세로 40 픽셀로 변경</p>
+
+    <div class="border">
+      document.getElementById("<dark><i>id</i></dark>").style.backgroundPosition = "<dark>200px 40px</dark>";
+    </div>
+
+  <p>배경 이미지 위치 반환</p>
+
+    <div class="border">
+      document.getElementById("<dark><i>id</i></dark>").style.backgroundPosition;
+    </div>
+  </div>
+
+  <br><br><br><br><br><br>
+
+</body>
+</html>

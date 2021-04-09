@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.png">
+  <style>
+    * {font-family: Times, serif;}
+    body {
+      width: 900px;
+      margin: auto;
+      line-height: 1.6rem;
+    }
+    h1, h2, h3 {margin-left: 30px;}
+    p {margin-left: 16px;}
+    .border {
+      border: 1px solid #ddd;
+      margin: 10px;
+      padding: 10px;
+      color: darkblue;
+      background-color: white;
+    }
+    .grey {
+      margin: 10px;
+      padding: 10px;
+      background-color: #eee;
+    }
+    em {color: red;}
+
+    dark {color: darkred;}
+    red {color: red;}
+    blue {color: blue;}
+    green {color: green;}
+
+    b {color: navy;}
+  </style>
+  <title>JavaScript Style animation 속성</title>
+</head>
+<body>
+  <h1>JavaScript Style animationDelay 속성</h1>
+  <hr>
+
+  <div id="animation">
+    <p>animationDelay: 5s</p>
+    <style>
+      #animation {
+        width: 220px;
+        height: 100px;
+        background-color: purple;
+        color: yellow;
+        text-align: center;
+        font-size: 1.2rem;
+        padding-top: 40px;
+        position: relative;
+        animation: myAnimation 5s infinite;
+      }
+
+      @keyframes myAnimation {
+        from {left: 0;}
+        to {left: 600px; background-color: blue;}
+      }
+    </style>
+  </div>
+  <button onclick="document.getElementById('animation').style.animationDelay='2s';">
+    Change animationDelay
+  </button>
+
+  <h3><em>animationDelay</em> 속성 변경</h3>
+  <div class="grey">
+    <div class="border">
+      document.getElementById("<dark>myDIV</dark>").style.animationDelay = "<dark>2s</dark>";
+    </div>
+  </div>
+  <p>
+    <em>animationDelay</em> 속성은 애니메이션이 시작되는시기를 지정한다.<br>
+    <em>animationDelay</em> 값은 초 (s) 또는 밀리 초 (ms)로 지정한다.<br>
+    참고  : 음수 값이 허용된다. -2s는 애니메이션을 한 번에 시작하지만 애니메이션은 2 초 후에시작한다.<br>
+    지연 시간은 버튼을 클릭 할 때가 아니라 페이지로드가 완료된 때부터 계산된다.<br>
+    따라서 이미 애니메이션이 동작하고 있는 데 지연시간을 변경하는 것은 의미가 없다.<br>
+  </p>
+
+  <h3>구문(Syntax)</h3>
+  <p><em>animationDelay</em> 속성 반환</p>
+  <div class="border">
+    <blue>const</blue> delay = <i>object</i>.style.animationDelay;
+  </div>
+  <p><em>animationDelay</em> 속성 설정</p>
+  <div class="border">
+    <i>object</i>.style.animationDelay = "<dark><i>time</i>|initial|inherit</dark>";
+  </div>
+
+  <h3>속성 값</h3>
+  <table style="border: 1px solid lightgrey;border-collapse: collapse;width: 100%;">
+    <style>
+      th, td {border: 1px solid lightgrey;padding: 5px;}
+      tr:nth-child(even) {background-color: #eee;}
+    </style>
+    <tr style="text-align: left;">
+      <th>속성 값</th><th>설 명</th>
+    </tr>
+    <tr>
+      <td><i>time</i></td><td>선택 사항, 시작 대기 시간(초 또는 밀리초) 지정. 기본값은 0</td>
+    </tr>
+    <tr>
+      <td>initial</td><td>기본값으로 설정</td>
+    </tr>
+    <tr>
+      <td>inherit</td><td>상위 요소에서 상속</td>
+    </tr>
+  </table>
+</body>
+</html>

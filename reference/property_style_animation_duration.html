@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.png">
+  <style>
+    * {font-family: Times, serif;}
+    body {
+      width: 900px;
+      margin: auto;
+      line-height: 1.6rem;
+    }
+    .border {
+      border: 1px solid #ddd;
+      margin: 10px;
+      padding: 10px;
+      color: darkblue;
+      background-color: white;
+    }
+    .grey {
+      margin: 10px;
+      padding: 10px;
+      background-color: #eee;
+    }
+    em {color: red;}
+
+    dark {color: darkred;}
+    red {color: red;}
+    blue {color: blue;}
+    green {color: green;}
+
+    b {color: navy;}
+  </style>
+  <title>JavaScript Style animation 속성</title>
+</head>
+<body>
+  <h1>JavaScript Style animationDuration 속성</h1>
+  <hr>
+
+  <div class="grey">
+    <div class="border">
+      document.getElementById("<dark>myDIV</dark>").style.animationDuration = "<dark>3s</dark>";
+    </div>
+  </div>
+  <p><em>animationDuration</em> 속성은 애니메이션이 한주기를 완료하는 데 걸리는 시간 (초 또는 밀리 초)을 정의한다.</p>
+
+  <h3>구문(Syntax)</h3>
+  <p><em>animationDuration</em> 속성 반환</p>
+  <div id="duration" class="border">
+    <i>object</i>.style.animationDuration;
+  </div>
+  <button onclick="document.getElementById('duration').innerHTML=document.getElementById('animation').style.animationDuration">animationDuration 속성값 확인</button>
+
+  <p><em>animationDuration</em> 속성 설정</p>
+  <div class="border">
+    <i>object</i>.style.animationDuration = "<dark><i>time</i>|initial|inherit</dark>"
+  </div>
+
+  <h3>속성 값</h3>
+  <table style="border: 1px solid lightgrey; border-collapse: collapse;width: 100%;">
+    <style>
+      th, td {border: 1px solid lightgrey;padding: 5px;}
+      tr:nth-child(even) {background-color: #eee;}
+    </style>
+    <tr style="text-align: left;">
+      <th>속성 값</th><th>설 명</th>
+    </tr>
+    <tr>
+      <td><i>time</i></td>
+      <td>애니메이션을 한 주기를 완료하는 데 걸리는 시간으로 기본값은 0이며, 애니메이션 없음이다.</td>
+    </tr>
+    <tr>
+      <td>initial</td><td>기본값으로 설정</td>
+    </tr>
+    <tr>
+      <td>inherit</td><td>상위 요소에서 상속</td>
+    </tr>
+  </table>
+
+  <style>
+    #animation {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      color: yellow;
+      font-size: 1.2rem;
+      text-align: center;
+      position: relative;
+      animation: animation;
+      animation-iteration-count: infinite;
+    }
+    @keyframes animation {
+      from {left: 0;}
+      to {left: 800px; background: blue;}
+    }
+  </style>
+  <div id="animation">Animation</div>
+  <script>document.getElementById('animation').style.animationDuration = "5s";</script>
+  <button onclick="document.getElementById('animation').style.animationDuration = '2s'">Change Animation Duration</button>
+
+</body>
+</html>
