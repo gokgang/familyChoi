@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.png">
+  <base href="" target="_blank">
+  <title>JavaScript ES6</title>
+  <style>
+    * {font-family: Times, serif;}
+    body {
+      width: 80%;
+      margin: auto;
+    }
+    .border {
+      border: 1px solid grey;
+      margin: 16px;
+      padding: 10px 16px;
+      font-size: 1.2rem;
+      color: darkblue;
+    }
+    button {
+      padding: 4px 6px;
+      font-size: 1.1rem;
+    }
+    em {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="h1">JavaScript ES6</h1>
+  <p><a href="./html_dom_css.html">JavaScript HTML DOM-CSS 변경</a></p>
+  <p><a href="./dom_object_style.html">DOM style 객체 속성</a></p>
+  <hr>
+  <h2>JavaScript HTML DOM - Changing HTML</h2>
+  <p>
+    HTML DOM을 사용하면 JavaScript가 HTML 요소의 내용을 변경할 수 있다.
+  </p>
+  <h2>HTML 출력 스트림 변경</h2>
+
+  <div class="border">
+    <script>
+      const date = new Date();
+      document.write("오늘 현재 : " + date.getFullYear() + ", " + date.getMonth() + ", " + date.getDate() + " " + date.getHours() + " : " + date.getMinutes());
+    </script>
+  </div>
+
+  <h2>HTML 내용 변경</h2>
+  <h3>구문(Syntax)</h3>
+  <div class="border">
+    document.getElementById(<i>id</i>).innerHTML = <i>new</i>HTML;
+  </div>
+
+  <h3>변경 단추를 누르면 &lt;p> 요소의 내용을 변경한다. <button onclick="change()">변 경</button></h3>
+  <p id="p1" class="border">Hello World !</p>
+  <script>
+    function change() {document.getElementById("p1").innerHTML = "Welcome Korea !";}
+
+    // <h1 id="h1"> 내용변경
+    let element = document.getElementById("h1");
+    element.innerHTML = "JavaScript Document Object Model";
+  </script>
+
+  <hr>
+  <h2></h2>
+  <div class="border">
+    document.getElementById(<i>id</i>).<i>attribute</i> = <i>new value</i>
+  </div>
+
+  <p style="color: navy;">&lt;img id="image"> 요소의 <em>src</em> 속성 변경</p>
+  <button onclick="changeImage()">Change image</button>
+  <img id="image" src="https://www.w3schools.com/js/smiley.gif">
+
+  <script>
+    function changeImage() {
+      document.getElementById("image").src = " https://www.w3schools.com/js/landscape.jpg";
+    }
+  </script>
+</body>
+</html>

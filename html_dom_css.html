@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="short icon" href="favicon.png">
+  <style>
+    body {
+      width: 80%;
+      margin: auto;
+      font-family: serif;
+      font-weight: 600;
+    }
+    .border {
+      border: 1px solid lightgrey;
+      margin: 10px;
+      padding: 10px;
+      color: darkblue;
+      background-color: white;
+    }
+    .grey {
+      margin: 10px;
+      padding: 10px;
+      background-color: #eef;
+    }
+  </style>
+  <title>JavaScript HTML DOM-CSS 변경</title>
+</head>
+<body>
+  <h1>JavaScript HTML DOM-CSS 변경</h1>
+  <p>HTML DOM을 사용하면 JavaScript가 HTML 요소의 스타일을 변경할 수 있다.</p>
+  <hr>
+  <h2>HTML 스타일 변경</h2>
+  <h3>구문(Syntax)</h3>
+  <div class="border">
+    document.getElementById(<i>id</i>).style.<i>property</i> = <i>new style</i>;
+  </div>
+
+  <p id="p2" class="border">
+    Welcome Korea !
+    <button onclick="changeColor('p2', 'red')" style="float: right;">Change color</button>
+  </p>
+ 
+  <script>
+    function changeColor(id, color) {
+      document.getElementById(id).style.color = color;
+    }
+  </script>
+
+  <hr>
+  <h2>이벤트 사용</h2>
+  <p>Event 발생</p>
+  <ul>
+    <li>요소가 클릭되었을 때</li>
+    <li>문서가 로드되었을 때</li>
+    <li>입력 칸에 내용이 변경되었을 때</li>
+    <li>기타 ...</li>
+  </ul>
+
+  <div class="grey">
+    <div class="border">
+      <h1 id="title">JavaScript<br> Document Object Model
+        <button onclick="document.getElementById('title').style.color = 'red'" style="float: right;">글자색 바꾸기</button>
+      </h1>
+    </div>
+  </div>
+
+  <h3>글 감추기 / 보이기 <button id="btn" onclick="hide()">글 감추기</button></h3>
+  <p id="hide" class="border">
+    JavaScript DOM을 사용하여 글을 보여 주거나 감출 수 있다. 
+  </p>
+  <script>
+    const element = document.getElementById("hide");
+    function hide() {
+      if (element.style.visibility != "hidden") {
+        element.style.visibility = "hidden";
+        document.getElementById("btn").innerHTML = '글 보이기';
+      } else {
+        element.style.visibility = "visible";
+        document.getElementById("btn").innerHTML =  '글 감추기';
+      }
+    }
+  </script>
+
+</body>
+</html>
