@@ -1,0 +1,155 @@
+﻿body {
+    margin: 2px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-size-adjust: auto;
+    text-align:justify;
+    text-indent: 0px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    letter-spacing: 0;
+    background-color: rgb(224, 229, 235);
+    color: black;
+    width:1900px;
+}
+
+table {
+    padding: 0;
+    align-self:center;
+}
+
+td{
+    vertical-align:top;
+    font-size:16px;
+}
+
+.borderLeft {
+    border-left: 1px solid lightgray;
+}
+
+.borderRight {
+    border-right: 1px solid lightgray;
+}
+
+.borderTop {
+    border-top: 1px solid lightblue;
+}
+
+.borderBottom {
+    border-bottom: 1px solid lightgrey;
+}
+
+.borderAll{
+    border: 1px solid lightskyblue;
+}
+/* 
+@media(min-width:1080px){
+    #grid ol {
+        border-right: 1px solid gainsboro;
+        margin: 0;
+        padding: 4px;
+    }
+    #grid {
+        display: grid;
+        grid-template-columns: 180px 180px 180px 180px 1fr;
+    } */
+
+    h1 {
+        font-size: 30px;
+        text-align: center;
+        border-bottom: 1px solid gainsboro;
+        margin: 1px;
+    }
+    h2 {
+        font-family: Batang;
+        text-align: center;
+        font-size: 40px;
+        margin: 1px;
+    }
+    h3 {
+        font-family:"한양해서";
+        text-align: center;
+        font-size: 30px;
+        margin:1px;
+        color: lightgray;
+    }
+}
+
+@media(max-width:800px){
+    #grid ol{
+        border:none;
+        padding:11px;
+    }
+    #grid{
+        display:block;
+    }
+    h1 {
+        text-align: center;
+        font-size: 13pt;
+        margin: 1px;
+    }
+    h2 {
+        text-align: center;
+        font-size: 13pt;
+        margin: 1px;
+    }
+    h3 {
+        font-family: serif;
+        text-align: center;
+        font-size: 13pt;
+        margin: 1px;
+    }
+}
+
+a:link, a:visited{
+	text-decoration: none;
+	color: navy;
+}
+a:hover, a:active{
+    color: blue;
+}
+li{
+    padding:4px;
+    list-style-type:none;
+}
+span {
+    font-family: "한양해서" serif;
+}
+.gainHan{
+        font-family:"한양해서" serif;
+        color:gainsboro;
+    }
+.Batang{
+        font-family:"Batang" serif;
+        font-size:13pt;
+        color:darkblue;
+    }
+
+.Padding11 {
+    padding: 10px;
+    border-right: 1px solid gainsboro;
+}
+.backGround {
+    background: inherit;
+    text-align: center;
+    font-size: 26px;
+    margin: 1px;
+    border: none
+}
+
+h1 {
+    background-color: blanchedalmond;
+}
+
+b {
+    font-weight: normal;
+    font-style: italic;
+    font-size:15px;
+    color: darkgrey;
+}
+.textShadow{
+    font-weight: bolder;
+    text-shadow: 1px 1px grey;
+}
